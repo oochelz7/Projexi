@@ -33,6 +33,10 @@
     position: absolute;
 }
 
+.logo {
+    z-index: 9;
+}
+
 .form h1 {
     padding: 15px 25px;
     margin: 0;
