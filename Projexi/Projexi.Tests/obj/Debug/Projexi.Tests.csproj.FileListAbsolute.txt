@@ -70,3 +70,5 @@ C:\Users\Chelz\Documents\GitHub\Projexi\Projexi\Projexi.Tests\bin\Debug\System.W
 C:\Users\Chelz\Documents\GitHub\Projexi\Projexi\Projexi.Tests\obj\Debug\Projexi.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Chelz\Documents\GitHub\Projexi\Projexi\Projexi.Tests\obj\Debug\Projexi.Tests.dll
 C:\Users\Chelz\Documents\GitHub\Projexi\Projexi\Projexi.Tests\obj\Debug\Projexi.Tests.pdb
+C:\Users\Chelz\Documents\GitHub\Projexi\Projexi\Projexi.Tests\bin\Debug\SendGridMail.dll
+C:\Users\Chelz\Documents\GitHub\Projexi\Projexi\Projexi.Tests\bin\Debug\CodeScales.Http.dll
