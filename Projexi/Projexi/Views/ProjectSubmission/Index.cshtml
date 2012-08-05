@@ -1,0 +1,68 @@
+﻿@model Projexi.Models.ProjectSubmission
+
+@{
+    ViewBag.Title = "Projexi | Project Submission";
+}
+
+<form action="/ProjectSubmission/" method="post">
+    <h1>Project Submission</h1>
+
+    <div class="panel overview">
+        <h2>Overview</h2>
+        <div class="form">
+            <div class="field">
+                @Html.LabelFor(model => model.ProjectName)<br />
+                @Html.EditorFor(model => model.ProjectName)
+                @Html.ValidationMessageFor(model => model.ProjectName)
+            </div>
+            <div class="field">
+                @Html.LabelFor(model => model.RequestedBy)<br />
+                @Html.EditorFor(model => model.RequestedBy)
+                @Html.ValidationMessageFor(model => model.RequestedBy)
+            </div>
+            <div class="field">
+                @Html.LabelFor(model => model.DetailsAndDimensions)<br />
+                @Html.EditorFor(model => model.DetailsAndDimensions)
+                @Html.ValidationMessageFor(model => model.DetailsAndDimensions)
+            </div>
+            <div class="field">
+                @Html.LabelFor(model => model.Deadline)<br />
+                @Html.EditorFor(model => model.Deadline)
+                @Html.ValidationMessageFor(model => model.Deadline)
+            </div>
+            <div class="field">
+                @Html.LabelFor(model => model.FirstProofDate)<br />
+                @Html.EditorFor(model => model.FirstProofDate)
+                @Html.ValidationMessageFor(model => model.FirstProofDate)
+            </div>
+            <div class="field">
+                @Html.LabelFor(model => model.AdditionalComments)<br />
+                @Html.EditorFor(model => model.AdditionalComments)
+                @Html.ValidationMessageFor(model => model.AdditionalComments)
+            </div>
+        </div>
+    </div>
+
+    <div class="panel details">
+        <h2>Details</h2>
+        <div class="form">
+            <div class="field">
+                @Html.LabelFor(model => model.KeyObjective)<br />
+                @Html.EditorFor(model => model.KeyObjective)
+                @Html.ValidationMessageFor(model => model.KeyObjective)
+            </div>
+            <div class="field">
+                @Html.LabelFor(model => model.KeyGraphicsNeeded)<br />
+                @Html.EditorFor(model => model.KeyGraphicsNeeded)
+                @Html.ValidationMessageFor(model => model.KeyGraphicsNeeded)
+            </div>
+            <div class="field">
+                @Html.LabelFor(model => model.TargetAudience)<br />
+                @Html.EditorFor(model => model.TargetAudience)
+                @Html.ValidationMessageFor(model => model.TargetAudience)
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="Submit" />
+</form>
