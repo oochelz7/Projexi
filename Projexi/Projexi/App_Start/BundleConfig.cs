@@ -1,12 +1,9 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Projexi
-{
-    public class BundleConfig
-    {
-        public static void RegisterBundles(BundleCollection bundles)
-        {
+namespace Projexi {
+    public class BundleConfig {
+        public static void RegisterBundles(BundleCollection bundles) {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-1.*"));
 
@@ -19,6 +16,8 @@ namespace Projexi
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ProjectSubmission").Include("~/Scripts/ProjectSubmission*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
