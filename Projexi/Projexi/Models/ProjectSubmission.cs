@@ -40,5 +40,14 @@ namespace Projexi.Models {
         [Required]
         [Display(Name = "Target Audience")]
         public string TargetAudience { get; set; }
+
+        public bool IsValid() {
+            return !string.IsNullOrEmpty(ProjectName) &&
+                !string.IsNullOrEmpty(RequestedBy) &&
+                !string.IsNullOrEmpty(DetailsAndDimensions) &&
+                !string.IsNullOrEmpty(KeyObjective) &&
+                !string.IsNullOrEmpty(KeyGraphicsNeeded) &&
+                !string.IsNullOrEmpty(TargetAudience);
+        }
     }
 }

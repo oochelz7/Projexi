@@ -24,11 +24,23 @@ namespace Projexi.Controllers {
         // POST: /ProjectSubmission/
         [HttpPost]
         public ActionResult Index(ProjectSubmission project) {
+            if (project.IsValid()) {
+                ISendGrid email = SendGrid.GenerateInstance();
+                email.AddTo("ryan@ryanadamsdesign.com");
+                email.From = new MailAddress("new_submission@projexi.com");
+                email.Subject = "New project submitted: " + project.ProjectName;
+                SetMessageBody(project, email);
 
-            ISendGrid email = SendGrid.GenerateInstance();
-            email.AddTo("ryan@ryanadamsdesign.com");
-            email.From = new MailAddress("new_submission@projexi.com");
-            email.Subject = "New project submitted: " + project.ProjectName;
+                SMTP server = SMTP.GenerateInstance(new NetworkCredential("ba04776e-78bc-479a-a2a0-8035d31e119a@apphb.com", "7tydml1z"));
+                server.Deliver(email);
+
+                return View("EmailResult");
+            } else {
+                return View();
+            }
+        }
+
+        private void SetMessageBody(ProjectSubmission project, ISendGrid email) {
             email.Html = @"<html>
 <body>
     <h1>A new project was submitted! Yay!</h1>
@@ -72,11 +84,6 @@ namespace Projexi.Controllers {
     </table>
 </body>
 </html>";
-
-            SMTP server = SMTP.GenerateInstance(new NetworkCredential("ba04776e-78bc-479a-a2a0-8035d31e119a@apphb.com", "7tydml1z"));
-            server.Deliver(email);
-
-            return View("EmailResult");
         }
     }
 }
