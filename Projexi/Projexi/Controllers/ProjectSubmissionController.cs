@@ -24,19 +24,59 @@ namespace Projexi.Controllers {
         // POST: /ProjectSubmission/
         [HttpPost]
         public ActionResult Index(ProjectSubmission project) {
-            string username = "ba04776e-78bc-479a-a2a0-8035d31e119a";
-            string password = "9o<turtifiC>>p";
 
             ISendGrid email = SendGrid.GenerateInstance();
-            email.AddTo("chelsea@oochelz.com");
-            email.From = new MailAddress("blahh@nshdf.com");
-            email.Subject = "Yay, mail!";
-            email.Html = "<html><p>Hello</p><p>BAnana</p></html>";
+            email.AddTo("ryan@ryanadamsdesign.com");
+            email.From = new MailAddress("new_submission@projexi.com");
+            email.Subject = "New project submitted: " + project.ProjectName;
+            email.Html = @"<html>
+<body>
+    <h1>A new project was submitted! Yay!</h1>
+    <table style='border-collapse: collapse;'>
+        <tr>
+            <td style='border: 1px solid #CCC; padding: 5px;'><b>Project name:</b></td>
+            <td style='border: 1px solid #CCC; padding: 5px;'>" + project.ProjectName + @"</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #CCC; padding: 5px;'><b>Requested by:</b></td>
+            <td style='border: 1px solid #CCC; padding: 5px;'>" + project.RequestedBy + @"</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #CCC; padding: 5px;'><b>Details and dimensions:</b></td>
+            <td style='border: 1px solid #CCC; padding: 5px;'>" + project.DetailsAndDimensions + @"</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #CCC; padding: 5px;'><b>Deadline:</b></td>
+            <td style='border: 1px solid #CCC; padding: 5px;'>" + project.Deadline.ToShortDateString() + @"</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #CCC; padding: 5px;'><b>First proof due:</b></td>
+            <td style='border: 1px solid #CCC; padding: 5px;'>" + project.FirstProofDate.ToShortDateString() + @"</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #CCC; padding: 5px;'><b>Key objective/Call to action:</b></td>
+            <td style='border: 1px solid #CCC; padding: 5px;'>" + project.KeyObjective + @"</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #CCC; padding: 5px;'><b>Key graphics needed:</b></td>
+            <td style='border: 1px solid #CCC; padding: 5px;'>" + project.KeyGraphicsNeeded + @"</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #CCC; padding: 5px;'><b>Target audience:</b></td>
+            <td style='border: 1px solid #CCC; padding: 5px;'>" + project.TargetAudience + @"</td>
+        </tr>
+        <tr>
+            <td style='border: 1px solid #CCC; padding: 5px;'><b>Additional comments:</b></td>
+            <td style='border: 1px solid #CCC; padding: 5px;'>" + project.AdditionalComments + @"</td>
+        </tr>
+    </table>
+</body>
+</html>";
 
-            SMTP server = SMTP.GenerateInstance(new NetworkCredential(username, password, "apphb.com"));
+            SMTP server = SMTP.GenerateInstance(new NetworkCredential("ba04776e-78bc-479a-a2a0-8035d31e119a@apphb.com", "7tydml1z"));
             server.Deliver(email);
 
-            return View();
+            return View("EmailResult");
         }
     }
 }
