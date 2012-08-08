@@ -70,9 +70,13 @@
     bottom: 0;
 }
 
-.button:hover {
-    cursor: pointer;
-}
+    .button.left {
+        right: auto;
+    }
+
+    .button:hover {
+        cursor: pointer;
+    }
 
 form h1, .button {
     color: #AAA;
