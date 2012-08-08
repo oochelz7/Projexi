@@ -6,15 +6,17 @@
 
     function OnContinueClick(evt) {
         evt.preventDefault();
-        $('.overview').hide('slide', { direction: 'left' }, 1000);
-        $('.details').show('slide', { direction: 'right' }, 1000);
-        $('#subheader').text('Details');
+        $('#panel-overview').hide('slide', { direction: 'left' }, 1000);
+        $('#subheader-overview').hide('slide', { direction: 'left' }, 1000);
+        $('#panel-details').show('slide', { direction: 'right' }, 1000);
+        $('#subheader-details').show('slide', { direction: 'right' }, 1000);
     }
 
     function OnPreviousClick(evt) {
         evt.preventDefault();
-        $('.details').hide('slide', { direction: 'right' }, 1000);
-        $('.overview').show('slide', { direction: 'left' }, 1000);
-        $('#subheader').text('Overview');
+        $('#panel-details').hide('slide', { direction: 'right' }, 1000);
+        $('#subheader-details').hide('slide', { direction: 'right' }, 1000);
+        $('#panel-overview').show('slide', { direction: 'left' }, 1000);
+        $('#subheader-overview').show('slide', { direction: 'left' }, 1000);
     }
 })(jQuery);

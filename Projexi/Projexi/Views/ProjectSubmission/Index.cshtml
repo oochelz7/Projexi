@@ -10,8 +10,11 @@
     </div>
     <div class="form">
         <h1>Project Submission</h1>
-        <h2 id="subheader">Overview</h2>
-        <div class="panel overview">
+        <div class="subheader">
+            <h2 id="subheader-overview">Overview</h2>
+            <h2 id="subheader-details" class="hidden">Details</h2>
+        </div>
+        <div class="panel" id="panel-overview">
             <div class="field">
                 @Html.LabelFor(model => model.ProjectName)<br />
                 @Html.EditorFor(model => model.ProjectName)
@@ -45,7 +48,7 @@
             <input type="submit" value="Next" id="overview-submit" class="button" />
         </div>
 
-        <div class="panel details">
+        <div class="panel hidden" id="panel-details">
             <div class="field">
                 @Html.LabelFor(model => model.KeyObjective)<br />
                 @Html.EditorFor(model => model.KeyObjective)

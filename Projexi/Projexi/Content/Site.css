@@ -11,7 +11,7 @@
     position: absolute;
 }
 
-.details {
+.hidden {
     display: none;
 }
 
@@ -42,19 +42,26 @@
     margin: 0;
 }
 
-.form h2 {
+.form .subheader {
     background-color: #AAA;
     margin: 0;
     color: #FFF;
-    font-size: 18px;
     padding: 12px 0 12px 50px;
     border-radius: 19px;
+    height: 20px;
     width: 650px;
     position: absolute;
     margin-left: -350px;
     left: 50%;
     box-shadow: 0 0 35px rgba(0,0,0,0.3);
 }
+
+    .form .subheader h2 {
+        font-size: 18px;
+        margin: 0;
+        position: absolute;
+        width: 600px;
+    }
 
 .logo-img {
     width: 320px;
