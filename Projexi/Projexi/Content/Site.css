@@ -135,3 +135,31 @@ form h1, .button {
     font-size: 10px;
     color: #666;
 }
+
+@media screen and (max-width: 650px) {
+    .form {
+        width: 100%;
+        height: 620px;
+        margin-bottom: 30px;
+    }
+
+    .logo {
+        margin-top: 10px;
+    }
+
+    .req-desc {
+        top: 380px;
+    }
+
+    .button {
+        right: auto;
+    }
+        .button.left {
+            bottom: 40px;
+        }
+
+    .panel {
+        height: 390px;
+        width: 100%;
+    }
+}
