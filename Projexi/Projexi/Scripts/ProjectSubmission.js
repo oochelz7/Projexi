@@ -3,7 +3,7 @@
         $('#overview-submit').click(OnContinueClick);
         $('#details-previous').click(OnPreviousClick);
         if (!isMobile.any())
-            $('.date input').datepicker();
+            $('.date input').datepicker({ showButtonPanel: true });
     });
 
     function OnContinueClick(evt) {
