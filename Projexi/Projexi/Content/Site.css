@@ -1,11 +1,12 @@
 ﻿body {
-    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
     background: url(/Images/1920-x-1200-bg.png) no-repeat fixed center top;
 }
 
 .panel {
     margin-left: 25px;
-    margin-top: 60px;
+    margin-top: 10px;
     height: 350px;
     width: 600px;
     position: absolute;
@@ -17,7 +18,7 @@
 
 .form {
     background-color: #FFF;
-    height: 500px;
+    height: 530px;
     top: 108px;
     border-radius: 20px;
     box-shadow: 0 0 50px #000;
@@ -26,21 +27,43 @@
 }
 
 .form, .logo {
-    left: 50%;
-    margin-left: -325px;
-    margin-top: 50px;
     width: 650px;
-    position: absolute;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .logo {
-    z-index: 9;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .form h1 {
     padding: 15px 25px;
     margin: 0;
 }
+
+form h1, form .subheader {
+    font-family: Arial Black, sans-serif;
+}
+
+.form label {
+    font-size: 14px;
+}
+
+.form .field {
+    padding-top: 5px;
+}
+
+    .form .field input, .form .field textarea {
+        border: 1px solid #AAA;
+        margin: 3px 0;
+        width: 200px;
+        padding: 2px;
+    }
+
+    .form .field textarea {
+        height: 40px;
+    }
 
 .form .subheader {
     background-color: #AAA;
@@ -50,9 +73,7 @@
     border-radius: 19px;
     height: 20px;
     width: 650px;
-    position: absolute;
-    margin-left: -350px;
-    left: 50%;
+    margin-left: -20px;
     box-shadow: 0 0 35px rgba(0,0,0,0.3);
 }
 
@@ -90,4 +111,27 @@ form h1, .button {
     font-size: 40px;
     letter-spacing: -2px;
     font-weight: bold;
+}
+
+.field-validation-error {
+    color: #FF4040;
+    font-weight: bold;
+    background: url(/Images/error.png) no-repeat;
+    padding-left: 20px;
+    margin-left: 5px;
+}
+
+.req {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 0px;
+    color: #666;
+}
+
+.req-desc {
+    position: relative;
+    top: 345px;
+    margin: 25px;
+    font-size: 10px;
+    color: #666;
 }

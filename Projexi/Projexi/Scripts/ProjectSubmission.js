@@ -2,6 +2,7 @@
     $(document).ready(function () {
         $('#overview-submit').click(OnContinueClick);
         $('#details-previous').click(OnPreviousClick);
+        $('.date input').datepicker();
     });
 
     function OnContinueClick(evt) {

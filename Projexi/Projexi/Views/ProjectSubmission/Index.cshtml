@@ -16,27 +16,27 @@
         </div>
         <div class="panel" id="panel-overview">
             <div class="field">
-                @Html.LabelFor(model => model.ProjectName)<br />
+                <span class="req">*</span> @Html.LabelFor(model => model.ProjectName)<br />
                 @Html.EditorFor(model => model.ProjectName)
                 @Html.ValidationMessageFor(model => model.ProjectName)
             </div>
             <div class="field">
-                @Html.LabelFor(model => model.RequestedBy)<br />
+                <span class="req">*</span> @Html.LabelFor(model => model.RequestedBy)<br />
                 @Html.EditorFor(model => model.RequestedBy)
                 @Html.ValidationMessageFor(model => model.RequestedBy)
             </div>
             <div class="field">
-                @Html.LabelFor(model => model.DetailsAndDimensions)<br />
+                <span class="req">*</span> @Html.LabelFor(model => model.DetailsAndDimensions)<br />
                 @Html.EditorFor(model => model.DetailsAndDimensions)
                 @Html.ValidationMessageFor(model => model.DetailsAndDimensions)
             </div>
-            <div class="field">
-                @Html.LabelFor(model => model.Deadline)<br />
+            <div class="field date">
+                <span class="req">*</span> @Html.LabelFor(model => model.Deadline)<br />
                 @Html.EditorFor(model => model.Deadline)
                 @Html.ValidationMessageFor(model => model.Deadline)
             </div>
-            <div class="field">
-                @Html.LabelFor(model => model.FirstProofDate)<br />
+            <div class="field date">
+                <span class="req">*</span> @Html.LabelFor(model => model.FirstProofDate)<br />
                 @Html.EditorFor(model => model.FirstProofDate)
                 @Html.ValidationMessageFor(model => model.FirstProofDate)
             </div>
@@ -50,22 +50,24 @@
 
         <div class="panel hidden" id="panel-details">
             <div class="field">
-                @Html.LabelFor(model => model.KeyObjective)<br />
+                <span class="req">*</span> @Html.LabelFor(model => model.KeyObjective)<br />
                 @Html.EditorFor(model => model.KeyObjective)
                 @Html.ValidationMessageFor(model => model.KeyObjective)
             </div>
             <div class="field">
-                @Html.LabelFor(model => model.KeyGraphicsNeeded)<br />
+                <span class="req">*</span> @Html.LabelFor(model => model.KeyGraphicsNeeded)<br />
                 @Html.EditorFor(model => model.KeyGraphicsNeeded)
                 @Html.ValidationMessageFor(model => model.KeyGraphicsNeeded)
             </div>
             <div class="field">
-                @Html.LabelFor(model => model.TargetAudience)<br />
+                <span class="req">*</span> @Html.LabelFor(model => model.TargetAudience)<br />
                 @Html.EditorFor(model => model.TargetAudience)
                 @Html.ValidationMessageFor(model => model.TargetAudience)
             </div>
             <input type="submit" value="Previous" id="details-previous" class="button left" />
             <input type="submit" value="Submit" id="details-submit" class="button" />
         </div>
+
+        <div class="req-desc"><span class="req">*</span> Required field</div>
     </div>
 </form>

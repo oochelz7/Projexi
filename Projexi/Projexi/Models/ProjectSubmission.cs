@@ -16,12 +16,14 @@ namespace Projexi.Models {
         [DataType(DataType.MultilineText)]
         public string DetailsAndDimensions { get; set; }
 
-        [DataType(DataType.Date)]
+        [Required]
         [Display(Name = "Deadline")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTime Deadline { get; set; }
 
-        [DataType(DataType.Date)]
+        [Required]
         [Display(Name = "I would like to see first proof by")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTime FirstProofDate { get; set; }
 
         [Display(Name = "Additional Comments")]
